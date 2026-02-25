@@ -49,7 +49,7 @@ That is why I am building this.
 
 It works through interception at the tool call level, instead of the agent framework level. This is something I learnt back when I was working on Sworn (github.com/kavishsathia/sworn), and I think it's a good pattern, and it can be reduced down to the rehearsal agent predicting what your function returns given prior mutations + your parameters.
 
-It intercepts queries, and mutates it based on whatever mutations you have run before. And it intercepts mutations to stores it in its short term memory.
+It intercepts queries, and mutates them based on whatever mutations you have run before. And it intercepts mutations to store them in its short term memory.
 
 ### Short-Term Memory
 
