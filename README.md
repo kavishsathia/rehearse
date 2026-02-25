@@ -47,8 +47,14 @@ That is why I am building this.
 
 ### SDK
 
-### API Interface
+It works through interception at the tool call level, instead of the agent framework level. This is something I learnt back when I was working on Sworn (github.com/kavishsathia/sworn), and I think it's a good pattern, and it can be reduced down to the rehearsal agent predicting what your function returns given prior mutations + your parameters.
+
+It intercepts queries, and mutates it based on whatever mutations you have run before. And it intercepts mutations to stores it in its short term memory.
 
 ### Short-Term Memory
 
+The short term memory is just the collection of mutations you have run on your data in the current session. If you're running your agent for 30 hours, there is little chance that all the environmental changes can be kept in context, so it is offloaded onto Elasticsearch and then searched from there.
+
 ### Long-Term Memory
+
+Long term memory is interesting, since we also get to see the function's actual output when the agent actually runs after the rehearsal, we get to capture the differences that exist between what was mocked and the reality. This means that we can use this as a datapoint to improve the fidelity of the rehearsal agent so that it mocks better environments in the future rehearsals.
