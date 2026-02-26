@@ -21,7 +21,7 @@ Second issue is: cost, this costs at least 3x more, the agent itself runs twice,
 
 Why did the abstraction fail? I could actually argue that it didn't. Let's fallback to our analogy of a dance rehearsal. Does a dance rehearsal guarantee you that your execution will be correct? No, not really, it only guarantees you that that each dancer knows what they need to do. On the real day, a lot of factors can go wrong, the music could stop playing, the audience may "boo" the dancers, emotional stress. The dance might not work out as rehearsed.
 
-Same thing here, the real environment is bound to change. However, what makes it so jarring here is the fact that the stochasticity of a dance environment is not in close proximity to the dancers themselves. That is to say the stage is theirs, they dance group controls the stage. On the other hand, our agent doesn't even have a stage, it's almost like dropping a dancer in the middle of the crowd and asking him to dance.
+Same thing here, the real environment is bound to change. However, what makes it so jarring here is the fact that the stochasticity of a dance environment is not in close proximity to the dancers themselves. That is to say the stage is theirs, the dance group controls the stage. On the other hand, our agent doesn't even have a stage, it's almost like dropping a dancer in the middle of the crowd and asking him to dance.
 
 For these factors, I was wrong in saying that the abstraction applies here.
 
