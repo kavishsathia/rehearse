@@ -11,6 +11,20 @@
 
 ---
 
+## Edit: 26 Feb 2026
+
+TLDR: as much as this is a beautiful abstraction, it is a wrong one.
+
+A few problems were irking me about this method, ever since I began working on it. One of them was the fact that the rehearsal environment may not even be similar to the real environment due to the stochasticity of most environments. Like imagine if you rehearse replying to an email, but the sender of the email tells you to ignore the email they sent in between the time of the rehearsal and the time of execution, an agent committing to the rehearsal will still send that email to avoid misalignment. There are a lot more instances of this, the real world is innately stochastic, which made me realize this abstraction has a fundamental mismatch with the problem.
+
+Second issue is: cost, this costs at least 3x more, the agent itself runs twice, and the rehearsal agent runs once (I'm estimating the tokens to be around the same but arguably the rehearsal agent will generate way more tokens).
+
+Why did the abstraction fail? I could actually argue that it didn't. Let's fallback to our analogy of a dance rehearsal. Does a dance rehearsal guarantee you that your execution will be correct? No, not really, it only guarantees you that that each dancer knows what they need to do. On the real day, a lot of factors can go wrong, the music could stop playing, the audience may "boo" the dancers, emotional stress. The dance might not work out as rehearsed.
+
+Same thing here, the real environment is bound to change. However, what makes it so jarring here is the fact that the stochasticity of a dance environment is not in close proximity to the dancers themselves. That is to say the stage is theirs, they dance group controls the stage. On the other hand, our agent doesn't even have a stage, it's almost like dropping a dancer in the middle of the crowd and asking him to dance.
+
+For these factors, I was wrong in saying that the abstraction applies here.
+
 ## What is Rehearse?
 
 Rehearse is a rehearsal layer for AI agents. Think of it as a sandbox but you really don't have to set up the fake sandbox environment, instead another AI agent mocks the environment for the agent that is executing. This is useful when you want to get an in-depth plan on how the agent is going to execute something before it even starts doing it.
